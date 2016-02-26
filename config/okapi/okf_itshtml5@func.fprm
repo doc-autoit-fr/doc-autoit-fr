@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- All configurations to use with the HTML5+ITS filter MUST map 'h' to the HTML namespace. --><its:rules xmlns:its="http://www.w3.org/2005/11/its" xmlns:h="http://www.w3.org/1999/xhtml" version="2.0">
+	<!--titre-->
+	<its:translateRule selector="//h:title" translate="no"/>
+	
+	<!--Function Reference-->
+	<its:translateRule selector="//h:h1[1][@class='small' and text()='Function Reference']" translate="no"/>
+	
+  <!--nom de la fonction-->
+  <its:translateRule selector="//h:h1[2]" translate="no"/>
+	
+  <!--class "codeheader" (syntaxe de la fonction)-->
+  <its:translateRule selector="//h:p[@class='codeheader']" translate="no"/>
+  
+  <!--class "funcdesc" - NotePointer = titre de la page-->
+  <its:locNoteRule locNotePointer="//h:title" locNoteType="description" selector="//h:p[@class='funcdesc']">
+    </its:locNoteRule>
+  
+  <!--Parameters-->
+  <!--partie gauche des tableaux-->
+  <its:translateRule selector="//h:table[preceding-sibling::h:h2[1] = 'Parameters']//h:tr/h:td[1]" translate="no"/>
+  <!--ajoute la partie gauche en commentaire pour aider à la traduction de la partie droite-->
+  <its:locNoteRule locNotePointer="../h:td[1]" locNoteType="description" selector="//h:table//h:tr/h:td[2]">
+    </its:locNoteRule>
+  
+  <!--Return Value-->
+  <!--Success: et Failure:-->
+  <its:translateRule selector="//h:table[preceding-sibling::h:h2[1] = 'Return Value']//h:tr/h:td[1][text() = 'Success:' or text() = 'Failure:']" translate="no"/>
+  
+  <!--conteneurs pour les exemples de code-->
+  <its:translateRule selector="//h:div[@class='codeSnippetContainer']" translate="no"/>
+  <its:withinTextRule selector="//h:div[@class='codeSnippetContainer']//*" withinText="no"/>
+  
+  <!--commentaires dans les exemples de code-->
+  <!--obsolète-->
+  <!--<its:translateRule selector="//h:div[@class='codeSnippetContainer']//h:span[@class='S1']" translate="yes"/>-->
+  
+  <its:withinTextRule selector="//h:br" withinText="no"/>
+  <its:withinTextRule selector="//h:hr" withinText="no"/>
+  
+  <its:translateRule selector="//h:hr" translate="no"/>
+  
+  
+	<!--début tests-->
+	
+  <!--fin tests-->
+  
+  
+  <!-- ############################################################################################################# -->
+  
+  
+  <!-- Inline elements -->
+  <!-- | //h:span | //h:hr -->
+  <its:withinTextRule selector="//h:abbr | //h:acronym | //h:cite | //h:code | //h:dfn | //h:kbd | //h:q | //h:samp |   //h:strong | //h:var | //h:b | //h:em | //h:big | //h:i | //h:small | //h:sub | //h:sup | //h:tt | //h:del | //h:ins |   //h:bdo | //h:img | //h:a | //h:font | //h:center | //h:s | //h:strike | //h:u | //h:isindex" withinText="yes"/>
+  
+  
+  <!-- Non-translatable elements -->
+  <its:translateRule selector="//h:script|//h:style" translate="no"/>
+  
+  <its:translateRule selector="//h:del" translate="no"/>
+  <its:translateRule selector="//h:del/descendant-or-self::*/@*" translate="no"/>
+  
+  
+  <!-- Translatable attribute -->
+  <its:translateRule selector="//h:*/@abbr|//h:*/@alt|//h:*/@prompt|//h:*/@standby|//h:*/@summary|//h:*/@title" translate="yes"/>
+  
+  
+  <!-- Attributes for the input element -->
+  <its:translateRule selector="//h:input/@value" translate="yes"/>
+  <its:translateRule selector="//h:input[@type='hidden']/@value" translate="no"/>   
+  
+
+  <!-- Bidirectional information. Note: No direct support for 'auto' value -->
+  <its:dirRule dir="ltr" selector="//h:*[@dir='ltr']"/>
+  <its:dirRule dir="rtl" selector="//h:*[@dir='rtl']"/>
+  <its:dirRule dir="lro" selector="//h:bdo[@dir='ltr']"/>
+  <its:dirRule dir="rlo" selector="//h:bdo[@dir='rtl']"/>
+
+  <!-- Note: dfn and dt don't match exactly the Terminology data category -->
+
+  <!-- Note: Preserve space is not handled by ITS -->
+
+  <!-- Domain -->
+  <its:domainRule domainPointer="/h:html/h:head/h:meta[@name='dcterms.subject' or @name='keywords']/@content" selector="/h:html"/>
+</its:rules>

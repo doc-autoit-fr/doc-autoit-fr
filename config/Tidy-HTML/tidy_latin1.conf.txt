@@ -1,0 +1,13 @@
+break-before-br: no
+indent: auto
+indent-spaces: 2
+input-encoding: utf8
+newline: CRLF
+output-encoding: latin1 // ascii ou latin1 (iso-8859-1)
+quiet: yes
+sort-attributes: alpha
+tab-size: 4
+tidy-mark: no
+uppercase-attributes: no
+uppercase-tags: no
+wrap: 0

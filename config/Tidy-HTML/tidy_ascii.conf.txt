@@ -1,0 +1,128 @@
+// Fichier de configuration pour Tidy.
+
+// accessibility-check: 0
+// add-xml-decl: no
+// add-xml-space: no
+// alt-text
+// anchor-as-name: yes
+// ascii-chars: no
+// assume-xml-procins: no
+// bare: no
+break-before-br: no
+
+// This option specifies the character encoding Tidy uses for both the input and
+// output. For ascii, Tidy will accept Latin-1 (ISO-8859-1) character values, but
+// will use entities for all characters whose value > 127. For raw, Tidy will
+// output values above 127 without translating them into entities. For latin1,
+// characters above 255 will be written as entities. For utf8, Tidy assumes that
+// both input and output is encoded as UTF-8. You can use iso2022 for files encoded
+// using the ISO-2022 family of encodings e.g. ISO-2022-JP. For mac and win1252,
+// Tidy will accept vendor specific character values, but will use entities for all
+// characters whose value > 127. For unsupported encodings, use an external utility
+// to convert to and from UTF-8.
+// char-encoding: utf8
+
+// clean: no
+// coerce-endtags: yes
+// css-prefix
+// decorate-inferred-ul: no
+// doctype: auto
+// doctype-mode: *2
+// drop-empty-elements: yes
+// drop-empty-paras: yes
+// drop-font-tags: no
+// drop-proprietary-attributes: no
+// enclose-block-text: no
+// enclose-text: no
+// error-file
+// escape-cdata: no
+// fix-backslash: yes
+// fix-bad-comments: yes
+// fix-uri: yes
+// force-output: no
+// gdoc: no
+// gnu-emacs: no
+// gnu-emacs-file
+// hide-comments: no
+// hide-endtags: no
+
+// This option specifies if Tidy should indent block-level tags. If set to "auto",
+// this option causes Tidy to decide whether or not to indent the content of tags
+// such as TITLE, H1-H6, LI, TD, TD, or P depending on whether or not the content
+// includes a block-level element. You are advised to avoid setting indent to yes
+// as this can expose layout bugs in some browsers.
+indent: auto
+
+// indent-attributes: no
+// indent-cdata: no
+indent-spaces: 2
+input-encoding: utf8
+// input-xml: no
+// join-classes: no
+// join-styles: yes
+// keep-time: no
+// language
+// literal-attributes: no
+// logical-emphasis: no
+// lower-literals: yes
+// markup: yes
+// merge-divs: auto
+// merge-emphasis: yes
+// merge-spans: auto
+// ncr: yes
+// new-blocklevel-tags
+// new-empty-tags
+// new-inline-tags
+// new-pre-tags
+newline: CRLF
+// numeric-entities: no
+// omit-optional-tags: no
+output-bom: no
+output-encoding: ascii
+// output-file
+// output-html: no
+// output-xhtml: no
+// output-xml: no
+// preserve-entities: no
+// punctuation-wrap: no
+quiet: yes
+// quote-ampersand: yes
+// quote-marks: no
+// quote-nbsp: yes
+// repeated-attributes: keep-last
+// replace-color: no
+// show-body-only: no
+// show-errors: 6
+// show-info: yes
+// show-warnings: yes
+// slide-style
+
+// This option specifies that tidy should sort attributes within an element
+// using the specified sort algorithm. If set to "alpha", the algorithm is an
+// ascending alphabetic sort.
+sort-attributes: alpha
+
+// split: no
+tab-size: 4
+
+// This option specifies if Tidy should add a meta element to the document head
+// to indicate that the document has been tidied. Tidy won't add a meta element if
+// one is already present.
+tidy-mark: no
+
+uppercase-attributes: no
+uppercase-tags: no
+
+// vertical-space: no
+// word-2000: no
+wrap: 0
+// wrap-asp: yes
+// wrap-attributes: no
+// wrap-jste: yes
+// wrap-php: yes
+// wrap-script-literals: no
+// wrap-sections: yes
+// write-back: no
+
+// Values marked with an *asterisk are calculated
+// internally by HTML Tidy
