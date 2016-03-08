@@ -1,0 +1,2 @@
+glossaires/*.csv filter=lfs diff=lfs merge=lfs -text
+glossaires/*.tbx filter=lfs diff=lfs merge=lfs -text
